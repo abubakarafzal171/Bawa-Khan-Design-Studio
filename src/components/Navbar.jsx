@@ -1,6 +1,6 @@
-import React, { useState , useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -10,32 +10,26 @@ import {
   Linkedin,
   Menu,
   X,
-} from 'lucide-react';
+} from "lucide-react";
 
-/* =============================================
-   PREMIUM NAVBAR – BAWA KHAN DESIGN STUDIO
-   Industry: Construction / Design / Architecture
-============================================= */
-
-const navItems = ['Home', 'About', 'Services', 'Portfolio', 'Contact'];
+const navItems = ["Home", "About", "Services", "Projects", "Contact"];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-useEffect(() => {
-  if (isOpen) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
-  }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-  return () => {
-    document.body.style.overflow = 'auto';
-  };
-}, [isOpen]);
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <header className="w-full fixed top-0 z-50">
-      {/* ================= TOP INFO BAR ================= */}
       <div className="hidden lg:flex bg-slate-950 text-slate-200 px-10 py-2 text-xs justify-between items-center">
         <div className="flex gap-8">
           <span className="flex items-center gap-2">
@@ -59,17 +53,15 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* ================= MAIN NAVBAR ================= */}
       <nav className="bg-white/95 backdrop-blur shadow-lg">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex h-20 items-center justify-between">
-
             {/* LOGO */}
             <NavLink to="/" className="leading-tight">
               <h1 className="text-2xl lg:text-3xl font-black tracking-tight text-slate-900">
                 BAWA KHAN
               </h1>
-              <p className="text-[10px] tracking-[0.3em] text-orange-500 font-semibold">
+              <p className="text-[10px] tracking-[0.2em] text-orange-500 font-semibold">
                 DESIGN STUDIO
               </p>
             </NavLink>
@@ -79,12 +71,14 @@ useEffect(() => {
               {navItems.map((item) => (
                 <NavLink
                   key={item}
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   className={({ isActive }) =>
                     `relative h-full px-6 flex items-center text-sm font-semibold uppercase tracking-wide transition-all duration-300
-                    ${isActive
-                      ? 'text-orange-600'
-                      : 'text-slate-700 hover:text-orange-600'}
+                    ${
+                      isActive
+                        ? "text-orange-600"
+                        : "text-slate-700 hover:text-orange-600"
+                    }
                     `
                   }
                 >
@@ -92,8 +86,8 @@ useEffect(() => {
                     <>
                       {item}
                       <span
-                        className={`absolute bottom-0 left-0 h-[3px] bg-orange-500 transition-all duration-300
-                          ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                        className={`absolute bottom-0 left-0 h-0.75 bg-orange-500 transition-all duration-300
+                          ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
                       />
                     </>
                   )}
@@ -130,16 +124,18 @@ useEffect(() => {
             className="fixed inset-0 z-50 bg-black/60 md:hidden"
           >
             <motion.div
-              initial={{ x: '-100%' }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ duration: 0.35, ease: 'easeInOut' }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
               className="w-[75%] max-w-sm h-full bg-slate-950 p-8"
             >
               <div className="flex items-center justify-between mb-10">
                 <div>
                   <h2 className="text-xl font-black text-white">BAWA KHAN</h2>
-                  <p className="text-[10px] tracking-[0.3em] text-orange-500">DESIGN STUDIO</p>
+                  <p className="text-[10px] tracking-[0.3em] text-orange-500">
+                    DESIGN STUDIO
+                  </p>
                 </div>
                 <button onClick={() => setIsOpen(false)}>
                   <X size={28} className="text-white" />
@@ -150,7 +146,7 @@ useEffect(() => {
                 {navItems.map((item) => (
                   <NavLink
                     key={item}
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     onClick={() => setIsOpen(false)}
                     className="text-white text-lg font-medium border-b border-slate-800 pb-3 hover:text-orange-500 transition"
                   >

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div className='md:pt-30 pt-19'>Services</div>
   )
 }
 
