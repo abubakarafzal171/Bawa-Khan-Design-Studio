@@ -5,6 +5,7 @@ import rev2 from '../data/images/abuzar.png'
 import rev3 from '../data/images/akhtar.png'
 import rev4 from '../data/images/alimalik.png'
 import rev5 from '../data/images/mahnoor.png'
+
 export const servicesData = [
   {
     id: 1,
